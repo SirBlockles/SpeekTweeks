@@ -32,11 +32,13 @@ SourceMod plugin for TF2 that makes the mercenaries and the announcer more talka
 **Example:** `sm_addcontext @all "IsMvMDefender:1"` **Alias:** `sm_speektweeks_addcontext`
 
 <br>
+
 `sm_removecontext <target> <context(s)>` - Removes vocal contexts from targets. If no target is specified, it will remove it from the command user. Note that this command should be done in console, with each context in quotes, since the `:` character splits the arguments. Additionally, passing `all` or `clear` as a context will clear all contexts from target.
 
 **Example:** `sm_removecontext @all "IsMvMDefender:1"` **Alias:** `sm_speektweeks_removecontext`
 
 <br>
+
 `sm_speakresponseconcept <target> <concept>` - Manually speak a response concept through target. If no target is provided, the concept will be spoke through the command user.
 
 **Example:** `sm_speakresponseconcept @red TLK_PLAYER_BATTLECRY` **Alias:** `sm_speektweeks_speakresponseconcept`
