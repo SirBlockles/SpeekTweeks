@@ -1,10 +1,7 @@
 # SpeekTweeks
-SourceMod plugin for TF2 that makes the mercenaries and the announcer more talkative.
+SourceMod plugin for TF2 that makes the mercenaries and the announcer more talkative. This plugin was written with granular control in mind, and basically every function can be enabled and disabled separately. Only enable what you want! The value in [brackets] is the default value for the CVAR.
 
-### Usage
-This plugin was written with granular control in mind, and basically every function can be enabled and disabled separately. Only enable what you want! The value in [brackets] is the default value for the CVAR.
-
-#### CVARs
+## CVARs
 
 `sm_speektweeks_enabled <0/[1]>` - Enable or disable the plugin as a whole
 
@@ -28,7 +25,7 @@ This plugin was written with granular control in mind, and basically every funct
 
 `sm_speektweeks_classdead_delay [10]` - Cooldown (in seconds) between a player being able to speak a "teammate is dead!" line, to avoid vocal spam.
 
-#### Commands
+## Commands
 
 `sm_addcontext <target> <context(s)>` - Adds vocal contexts to targets. If no player is specified, it will add it to the command user. Note that this command should be done in console, with each context in quotes, since the `:` character splits the arguments.
 
