@@ -1,10 +1,7 @@
 # SpeekTweeks
-SourceMod plugin for TF2 that makes the mercenaries and the announcer more talkative.
+SourceMod plugin for TF2 that makes the mercenaries and the announcer more talkative. This plugin was written with granular control in mind, and basically every function can be enabled and disabled separately. Only enable what you want! The value in [brackets] is the default value for the CVAR.
 
-### Usage
-This plugin was written with granular control in mind, and basically every function can be enabled and disabled separately. Only enable what you want! The value in [brackets] is the default value for the CVAR.
-
-#### CVARs
+## CVARs
 
 `sm_speektweeks_enabled <0/[1]>` - Enable or disable the plugin as a whole
 
@@ -30,22 +27,19 @@ This plugin was written with granular control in mind, and basically every funct
 
 `sm_speektweeks_classdead_delay [10]` - Cooldown (in seconds) between a player being able to speak a "teammate is dead!" line, to avoid vocal spam.
 
-#### Commands
+## Commands
 
 `sm_addcontext <target> <context(s)>` - Adds vocal contexts to targets. If no player is specified, it will add it to the command user. Note that this command should be done in console, with each context in quotes, since the `:` character splits the arguments.
 
 **Example:** `sm_addcontext @all "IsMvMDefender:1"` **Alias:** `sm_speektweeks_addcontext`
 
-<br>
 `sm_removecontext <target> <context(s)>` - Removes vocal contexts from targets. If no target is specified, it will remove it from the command user. Note that this command should be done in console, with each context in quotes, since the `:` character splits the arguments. Additionally, passing `all` or `clear` as a context will clear all contexts from target.
 
 **Example:** `sm_removecontext @all "IsMvMDefender:1"` **Alias:** `sm_speektweeks_removecontext`
 
-<br>
 `sm_speakresponseconcept <target> <concept>` - Manually speak a response concept through target. If no target is provided, the concept will be spoke through the command user.
 
 **Example:** `sm_speakresponseconcept @red TLK_PLAYER_BATTLECRY` **Alias:** `sm_speektweeks_speakresponseconcept`
-
 #### Changelog
 
 1.0 - Initial release
