@@ -20,7 +20,9 @@ This plugin was written with granular control in mind, and basically every funct
 
 `sm_speektweeks_roundstart_announcer <0/[1]>` - When Setup time ends, the announcer will yell "Get fighting already!," or any other of her lines when a Casual game initiates ("Move!" "Get going!" "Begin!").
 
-`sm_speektweeks_roundend <0/[1]>` - When a round ends, the announcer will proclaim that the round belongs to RED or BLU, depending on who won.
+`sm_speektweeks_roundend_announcer <0/[1]>` - When a round ends, the announcer will proclaim that the round belongs to RED or BLU to spectators (and SourceTV).
+
+`sm_speektweeks_roundend_players <0/[1]>` - When a round ends, characters on the winning team will speak a round win line from casual/competitive.
 
 `sm_speektweeks_classdead <0/[1]>` - When a player dies, their nearest teammate will call out that their teammate has died, like they do in MvM. This will only be spoken by the nearest teammate who has applicable lines (Solly/Heavy/Engy/Medic), and will still be triggered with feigned deaths from the Dead Ringer.
 
@@ -43,3 +45,9 @@ This plugin was written with granular control in mind, and basically every funct
 `sm_speakresponseconcept <target> <concept>` - Manually speak a response concept through target. If no target is provided, the concept will be spoke through the command user.
 
 **Example:** `sm_speakresponseconcept @red TLK_PLAYER_BATTLECRY` **Alias:** `sm_speektweeks_speakresponseconcept`
+
+#### Changelog
+
+1.0 - Initial release
+
+1.1 - Internal code cleanup, split `sm_speektweeks_roundend` into two CVARs: `sm_speektweeks_roundend_announcer`, which has announcer lines play for spectators, and `sm_speektweeks_roundend_players`, which has the winning player characters speak their round win lines.
