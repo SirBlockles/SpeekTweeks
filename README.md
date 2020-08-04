@@ -45,3 +45,5 @@ SourceMod plugin for TF2 that makes the mercenaries and the announcer more talka
 1.0 - Initial release
 
 1.1 - Internal code cleanup, split `sm_speektweeks_roundend` into two CVARs: `sm_speektweeks_roundend_announcer`, which has announcer lines play for spectators, and `sm_speektweeks_roundend_players`, which has the winning player characters speak their round win lines.
+
+1.1.1 - hotfix to make class-is-dead lines only spoken by teammates instead of players of any team

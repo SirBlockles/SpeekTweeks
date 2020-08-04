@@ -6,6 +6,7 @@ for regular play, with a focus on granular control, allowing just the parts you 
 CHANGELOG
 1.0 - Initial release
 1.1 - Update code to newdecls, rewrite class-is-dead logic, mercenary round win responses
+1.1.1 - hotfix to make class dead lines teammates-only again cause i broke it during the logic rewrite lol
 
 TO-DO LIST:
 * make team wipe minimum players count players on a TEAM, rather than on the server, so a 1v1 with 6 spectators doesn't still trigger team wipe lines
@@ -13,8 +14,6 @@ TO-DO LIST:
 * improve "the round belongs to team!" lines - use "the match belongs to" lines when a team hits the winlimit, and make it properly count stopwatch rounds so that it only announces the winner of the half
 
 * if a character teleports (teleporter/eureka effect) and narrowly dodges a projetile as a result, make them speak a "that was close!" line from MvM when they arrive
-
-* class reactions to winning the round; OnWinningTeam:1 then TLK_GAME_OVER_COMP & TLK_MATCH_OVER_COMP
 
 */
 
@@ -25,7 +24,7 @@ TO-DO LIST:
 
 #pragma semicolon 1
 
-#define VERSION "1.1"
+#define VERSION "1.1.1"
 
 //cvar handles
 Handle g_Cvar_Enabled;
@@ -394,7 +393,7 @@ public int FindNearestPlayer(int ply, TFClassType plyClass) {
 			if(posDiff < maxDist) {
 				TFClassType iClass = TF2_GetPlayerClass(i);
 				//if the speaker is engy, solly, or med, we're good. if they're a heavy, make sure the vicitm isn't a soldier since heavy doesn't have a soldier is dead line.
-				if((iClass == TFClass_Engineer || iClass == TFClass_Soldier || iClass == TFClass_Medic) || (iClass == TFClass_Heavy && plyClass != TFClass_Soldier)) {
+				if(((iClass == TFClass_Engineer || iClass == TFClass_Soldier || iClass == TFClass_Medic) || (iClass == TFClass_Heavy && plyClass != TFClass_Soldier)) && GetClientTeam(i) == GetClientTeam(ply)) {
 					maxDist = posDiff;
 					nearest = i;
 				}
